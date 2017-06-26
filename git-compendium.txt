@@ -31,10 +31,10 @@ git log -p <SHA>
   displays the changes of commit <SHA> and all the commits before
 
 git show
-  displays the changes of the most recent commit
+  displays the changes of the most recent commit compared to its parent
 
 git show <SHA>
-  displays the changes of commit <SHA>
+  displays the changes of commit <SHA> compared to its parent
 
 git add <filename>
   copies the file to the staging index. Use . instead of <filename> to add all
@@ -76,10 +76,19 @@ git checkout <branch name>
 git checkout -b <branch name>
   create branch and switch to it
 
+git checkout <SHA>
+  moves the HEAD to the specified commit. The files are reverted to the state
+  they were after that commit. If changes are made and committed they may
+  result into unreachable commits, so create a new branch before committing
+  them.
+
 git merge <name-of-branch-to-merge-in>
   merges all commits since the last common commit into the active branch. A
   commit documenting the merge will be made
   Use 'git reset --hard HEAD^' to undo the merge
+
+git merge --abort
+  Restores the state of the files before the merge started
 
 git commit --amend
   updates the most recent commit with files staged afterwards and lets you submit
@@ -98,3 +107,6 @@ git reset --soft HEAD^
 
 git reset --hard HEAD^
   takes the changes made in the most recent commit and erases them
+
+git gc
+  run garbage collector
