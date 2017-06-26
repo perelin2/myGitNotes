@@ -1,5 +1,6 @@
 git init
-  initializes an empty Git repository in the current directory.
+  initializes an empty Git repository in the current directory. Creates a new
+  directory .git in the current directory
 
 git clone <path to git repository to clone>
   copy a repository to the current directory
@@ -44,6 +45,9 @@ git commit
 
 git diff
   lists all uncommitted changes
+
+git diff --staged
+  lists changes to staged files compared to the last commit
 
 git tag -a <tag name>
   add a tag to the most recent commit
