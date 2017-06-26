@@ -1,0 +1,96 @@
+git init
+  initializes an empty Git repository in the current directory.
+
+git clone <path to git repository to clone>
+  copy a repository to the current directory
+
+git clone <path to git repository to clone> <name of cloned repo>
+  copy a repository to the current directory and rename it
+
+git status
+  display information on the state of your files, the working directory,
+  and the repository
+
+git log
+  lists SHA, author, date, and message of commits on the current branch of the repo
+
+git log --oneline
+  lists the information of git log on just one line per commit
+
+git log --oneline --graph --all
+  lists all commits of all the branches of the repo
+
+git log --stat
+  lists the files that were changed as well as the number of added/removed lines
+
+git log -p
+  displays the actual changes made to the committed files
+
+git log -p <SHA>
+  displays the changes of commit <SHA> and all the commits before
+
+git show
+  displays the changes of the most recent commit
+
+git show <SHA>
+  displays the changes of commit <SHA>
+
+git add <filename>
+  copies the file to the staging index. Use . instead of <filename> to add all
+  files in the current directory and all nested files and directories.
+
+git commit
+  commit all the files in the staging index
+
+git diff
+  lists all uncommitted changes
+
+git tag -a <tag name>
+  add a tag to the most recent commit
+
+git tag -a <tag name> <SHA>
+  add a tag to the commit with the specified SHA
+
+git tag -d <tag name>
+  removes the tag named <tag name>
+
+git branch
+  lists all the branches of the repo. The active branch is marked with a *.
+
+git branch <branch name>
+  adds a new branch to the repo
+
+git branch <branch name> <SHA>
+  adds a new branch to commit <SHA>
+
+git branch -d <branch name>
+  deletes a branch
+
+git checkout <branch name>
+  switch to branch <branch name>
+
+git checkout -b <branch name>
+  create branch and switch to it
+
+git merge <name-of-branch-to-merge-in>
+  merges all commits since the last common commit into the active branch. A
+  commit documenting the merge will be made
+  Use 'git reset --hard HEAD^' to undo the merge
+
+git commit --amend
+  updates the most recent commit with files staged afterwards and lets you submit
+  a new message
+
+git revert <SHA-of-commit-to-revert>
+  undoes the changes that were made by the provided commit
+
+git reset --mixed HEAD^
+  takes the changes made in the most recent commit and moves them to
+  the working directory
+
+git reset --soft HEAD^
+  takes the changes made in the most recent commit and moves them to
+  the Staging Index
+
+git reset --hard HEAD^
+  takes the changes made in the most recent commit and erases them
